@@ -1,0 +1,38 @@
+#myHeader {
+    background-color:rgb(190, 173, 168);
+    color: black;
+    text-align: center;
+    padding:20px;
+    font-size:40px;
+}
+
+.content {
+    background-color: #dfdad8;
+    padding: 10px;
+}
+
+.div1 {
+    text-align:center;
+} 
+
+.link {
+    background-color:black;
+    color:white;
+    text-align: center;
+    padding: 10px 100px;
+}
+
+.link:hover{
+    background-color:white;
+    color:black;
+}
+
+body {
+    background-color: bisque;
+}
+
+pre{
+    font-size: 17px;
+}
+
+  
