@@ -2,66 +2,30 @@
 <html>
 <head>
   <title>Kalkulator Sederhana</title>
-  <style> 
-          
-        input[type="button"] { 
-            width: 100%; 
-            padding: 20px 40px; 
-            font-size: 24px; 
-            font-weight: bold;  
-        } 
-          
-        input[type="text"] { 
-            padding: 20px 40px; 
-            font-size: 24px; 
-            font-weight: bold;  
-            border: 2px solid black;
-        } 
-    </style> 
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-  <table>
-    <form name="form1" action="#">
-      <tr> 
-          <td colspan="4"> 
-            <input type = "text" name = "answer">
-          </td> 
-      </tr> 
-      
-      <tr>
-        <td><input type = "button" value = "1" onclick = "form1.answer.value += '1'"></td>
-        <td><input type = "button" value = "2" onclick = "form1.answer.value += '2'"></td>
-        <td><input type = "button" value = "3" onclick = "form1.answer.value += '3'"></td>
-        <td><input type = "button" value = "+" onclick = "form1.answer.value += '+'"></td>
-      </tr>
-      
-      <tr>
-        <td><input type = "button" value = "4" onclick = "form1.answer.value += '4'"></td>
-        <td><input type = "button" value = "5" onclick = "form1.answer.value += '5'"></td>
-        <td><input type = "button" value = "6" onclick = "form1.answer.value += '6'"></td>
-        <td><input type = "button" value = "-" onclick = "form1.answer.value += '-'"></td>
-      </tr>
+  <div id="app">
+    Hasil : {{ hasil }} <br>
+    <input v-model="angka1" type="number">
+    <input v-model="angka2" type="number"> <br>
+    <button v-on:click="hasil=angka1+angka2">+</button>
+    <button v-on:click="hasil=angka1-angka2">-</button>
+    <button v-on:click="hasil=angka1*angka2">*</button>
+    <button v-on:click="hasil=angka1/angka2">/</button>
+  </div>
 
-      <tr>
-        <td><input type = "button" value = "7" onclick = "form1.answer.value += '7'"></td>
-        <td><input type = "button" value = "8" onclick = "form1.answer.value += '8'"></td>
-        <td><input type = "button" value = "9" onclick = "form1.answer.value += '9'"></td>
-        <td><input type = "button" value = "*" onclick = "form1.answer.value += '*'"></td>
-      </tr>
-
-      <tr>
-        <td><input type = "button" value = "." onclick = "form1.answer.value += '.'"></td>
-        <td><input type = "button" value = "0" onclick = "form1.answer.value += '0'"></td>
-        <td><input type = "button" value = "=" onclick = "form1.answer.value = eval(form1.answer.value)"></td>
-        <td><input type = "button" value = "/" onclick = "form1.answer.value += '/'"></td>
-      </tr>
-
-      <tr> 
-        <td colspan="4"> 
-          <input type = "button" value = "CLEAR" onclick = "form1.answer.value = ''">
-        </td> 
-      </tr> 
-    </form>
-  </table>
+  <script>
+    const app = Vue.createApp({
+      data(){
+        return {
+          angka1: 0,
+          angka2: 0,
+          hasil: 0,
+        }
+      }
+    })
+    app.mount('#app')
+  </script>
 </body>
 </html>
